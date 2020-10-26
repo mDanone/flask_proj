@@ -1,0 +1,12 @@
+{%extends "bootstrap/base.html"%}
+{%block page_content%}
+	{%macro render_comment(comment)%}
+		<li>comment</li>
+	{%endmacro%}
+	{{user.username}}
+	<ul>
+		{%for item in comments%}
+			{{render_comment(item)}}<br>
+		{%endfor%}
+	</ul>
+{%endblock%}

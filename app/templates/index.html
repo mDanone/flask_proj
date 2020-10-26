@@ -1,0 +1,22 @@
+{%extends "bootstrap/base.html"%}
+{%import "bootstrap/wtf.html" as wtf%}
+{%block title%}Flasky{%endblock%} 
+{%block page_content%}
+Hello, 
+{%if current_user.is_authenticated %}
+{{current_user.username}}
+{%else%}
+Stranger
+{%endif%}
+<p>
+  {%if current_user.is_authenticated%}
+  <a href="{{url_for('auth.change_password')}}">Change your password</a>
+ </p>
+Want to change your email?
+<p>
+	<a href="{{ url_for('auth.change_email_request') }}">
+		Click here to change your email.
+	</a>
+</p>
+{%endif%}
+{%endblock%}
